@@ -29,7 +29,7 @@ window.addEventListener("scroll", myScrollFunc);
 /* peticiones */
 $("#btn-enviar").on("click", function() {
 
-    /*
+    /
     var info = {
         "action": "getUserforCredential",
         "key": "vJvRvPR30X4I81PoIfjB4Azl6Etcjs8EZslj70cVO4rKT4Yqa7R2websJusSLrkyHuHCkInWCCxkxjyvhfnBkmTTEbzfqJEV3bneJy0a1limvGFAJQ1T2IAwHZAWz4Hq",
@@ -55,30 +55,7 @@ $("#btn-enviar").on("click", function() {
 
     $.ajax(settings).done(function(response) {
         console.log(response);
-    }); */
+    }); *
 
-    var data = JSON.stringify({
-        "action": "getUserforCredential",
-        "key": "vJvRvPR30X4I81PoIfjB4Azl6Etcjs8EZslj70cVO4rKT4Yqa7R2websJusSLrkyHuHCkInWCCxkxjyvhfnBkmTTEbzfqJEV3bneJy0a1limvGFAJQ1T2IAwHZAWz4Hq",
-        "ipAddress": "127.0.0.1",
-        "data": {
-            "typeCredential": 2,
-            "credential": "10266797"
-        }
-    });
-
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function() {
-        if (this.readyState === 4) {
-            console.log(this.responseText);
-        }
-    });
-
-    xhr.open("POST", "http://209.45.29.66:82/crm_gerens/webGateEnrolamientoCursos.php");
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.send(data);
 
 });
