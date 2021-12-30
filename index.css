@@ -1,0 +1,20 @@
+#main {
+    background-color: #fff;
+    height: 200vh;
+}
+
+.sticky {
+    background-color: #d2d0d0;
+    height: 65px;
+    position: fixed !important;
+    bottom: 0;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100001;
+}
+
+.sticky.hide {
+    display: block;
+}
