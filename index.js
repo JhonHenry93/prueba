@@ -29,7 +29,6 @@ window.addEventListener("scroll", myScrollFunc);
 /* peticiones */
 $("#btn-enviar").on("click", function() {
 
-    /
     var info = {
         "action": "getUserforCredential",
         "key": "vJvRvPR30X4I81PoIfjB4Azl6Etcjs8EZslj70cVO4rKT4Yqa7R2websJusSLrkyHuHCkInWCCxkxjyvhfnBkmTTEbzfqJEV3bneJy0a1limvGFAJQ1T2IAwHZAWz4Hq",
@@ -53,9 +52,24 @@ $("#btn-enviar").on("click", function() {
         data: JSON.stringify(info)
     }
 
-    $.ajax(settings).done(function(response) {
-        console.log(response);
-    }); *
+    // $.ajax(settings).done(function(response) {
+    //     console.log(response);
+    // });
 
+    $.ajax({
+        url: 'http://209.45.29.66:82/crm_gerens/webGateEnrolamientoCursos.php',            
+        method: 'POST',
+        dataType : 'json',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: JSON.stringify(info),
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
 
 });
