@@ -39,28 +39,12 @@ $("#btn-enviar").on("click", function() {
         }
     };
 
-    var settings = {
-        url: "http://209.45.29.66:82/crm_gerens/webGateEnrolamientoCursos.php",
-        method: "POST",
-        headers: {
-            'Access-Control-Allow-Credentials': true,
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-            'Access-Control-Allow-Headers': 'application/json',
-        },
-        contentType: 'application/json',
-        data: JSON.stringify(info)
-    }
-
-    // $.ajax(settings).done(function(response) {
-    //     console.log(response);
-    // });
-
     $.ajax({
         url: 'http://209.45.29.66:82/crm_gerens/webGateEnrolamientoCursos.php',            
         method: 'POST',
         dataType : 'json',
         headers: {
+            'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json'
         },
         data: JSON.stringify(info),
